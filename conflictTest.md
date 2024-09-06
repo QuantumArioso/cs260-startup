@@ -1,0 +1,1 @@
+"And I was led by the spirit, not knowing beforehand the things which I should do." -1 Nephi 4:6
