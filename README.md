@@ -14,3 +14,9 @@ There are a few non-profit organizations that serve LGBTQ+ and allied members of
 - Calendar and online meeting links displayed with updates in realtime
 - Persistent storage of users and events
 - Nicely-styled pages of helpful information and resources
+### Technologies
+I am going to use the required technologies in the following ways.
+- **HTML** - My HTML will set up the structure for my webpages, which include a home/about page, a stories page, a resources page, and pages for logging in to access the meeting and calendar page.
+- **CSS** - I will use CSS to create professional-looking styling for the organization.
+- **React** - JavaScript and React will help the website work together coherently and display videos and events.
+- **Service** - 
