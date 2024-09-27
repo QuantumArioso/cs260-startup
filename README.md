@@ -2,6 +2,7 @@
 [Notes File](notes.md)
 
 ## Specification Deliverable
+(updated 9/27/24)
 ### Elevator Pitch
 The August 2024 updates to the General Handbook of the Church of Jesus Christ of Latter-day Saints was injurious to transgender members. Trans members already struggle to find a place of belonging within the Church, but these policies have removed many of the small things that trans members had that helped them feel welcome. The goal of this website is to provide resources that help trans latter-day saints navigate this difficult space, as well as provide a way for them to connect with other trans members online.
 
