@@ -21,3 +21,13 @@ I am going to use the required technologies in the following ways.
 - **Service** - Backend service with endpoints for login and retrieving events and meeting links. Potentially using a public API for calendar set-up.
 - **DB/Login** - Save users and events
 - **WebSocket** - As the events and links are updated by the administrators, this is broadcast to all other users.
+
+### HTML Deliverable
+I used HTML for the structure of my website.
+- Four HTML pages for the home/about page, resources, meetings/calendar, and login.
+- The header and footer are the same for each page, with the header linking between pages and the footer linking to my GitHub repository.
+- The header contains a relevant image.
+- There are placeholders for login (login.html) and displaying the username (the header on each page).
+- The textual content for the homepage is added, as well as headings and placeholder content on the other pages.
+- The calendar represents data from the database.
+- The calendar and meeting links will be updated in realtime using WebSocket.
