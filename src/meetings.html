@@ -14,13 +14,22 @@
                 <li><a href="index.html">Home</a></li>
                 <li><a href="resources.html">Resources</a></li>
                 <li><a href="login.html">Login</a></li>
-                <li><a href="meetings.html">Chat</a></li> <!--TODO: restrict this page to only users who are logged in-->
+                <li><a href="meetings.html">Meetings and Calendar</a></li> <!--TODO: restrict this page to only users who are logged in-->
             </ul>
         </nav>
         <h4>Logged in as: <span id="username">Guest</span></h4> <!-- This is a placeholder for the username -->
     </header>
     <hr>
     <main>
+        <!-- Websocket will be used on this page to update the link and calendar events in real time from the users with those permissions-->
+        <!-- This page will store the calendar events in the database-->
+        <section>
+            <h2>Meetings</h2>
+            <div class="meetings-placeholder">
+                <!-- Placeholder for meeting link -->
+                <p>Meeting link will be placed here</p>
+            </div>
+        </section>
         <section>
             <h2>June 2024 Calendar</h2>
             <table border="1">
