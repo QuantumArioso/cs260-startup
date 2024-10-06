@@ -1,0 +1,18 @@
+header, footer {
+    background-color: #4b4d4e;
+    color: white;
+    text-align: left;
+    padding: 10px 0;
+    width: 100%;
+    position: fixed;
+    left: 0;
+    padding-left: 20px;
+}
+
+header {
+    top: 0;
+}
+
+footer {
+    bottom: 0;
+}
