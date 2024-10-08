@@ -9,6 +9,14 @@ header, footer {
     padding-left: 20px;
 }
 
+a:link {
+    color: #add8e6; /* Lighter blue color for unclicked links */
+}
+
+a:visited {
+    color: inherit; /* Remove the clicked link color */
+}
+
 header {
     top: 0;
 }
