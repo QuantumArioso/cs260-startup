@@ -1,6 +1,6 @@
 header, footer {
     background-color: #4b4d4e;
-    color: white;
+    color: #e39caa;
     text-align: left;
     padding: 1em;
     width: 100%;
@@ -10,11 +10,11 @@ header, footer {
 }
 
 a:link {
-    color: #add8e6; /* Lighter blue color for unclicked links */
+    color: #54bce3; /* Lighter blue color for unclicked links */
 }
 
 a:visited {
-    color: inherit; /* Remove the clicked link color */
+    color: #54bce3;
 }
 
 header {
@@ -39,3 +39,4 @@ main {
     overflow-y: auto;
     padding: 1em;
 }
+
