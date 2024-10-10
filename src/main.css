@@ -4,7 +4,7 @@ header, footer {
     text-align: left;
     padding: 1em;
     width: 100%;
-    position: fixed;
+    position: flex;
     left: 0;
     padding-left: 20px;
 }
@@ -29,7 +29,7 @@ body {
     margin: 0;
     display: flex;
     flex-direction: column;
-    height: 5000vh;
+    height: auto;
     overflow-y: scroll;
 }
 /*TODO: Make the main content scrollable*/
