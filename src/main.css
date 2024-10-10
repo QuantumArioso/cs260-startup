@@ -29,9 +29,14 @@ body {
     margin: 0;
     display: flex;
     flex-direction: column;
-    height: 100vh;
+    height: 5000vh;
+    overflow-y: scroll;
 }
 /*TODO: Make the main content scrollable*/
+/* sticky {
+    position: sticky;
+    top: 20px;
+} */
 main {
     flex: 1;
     margin-top: 60px; /* Adjust based on header height */
