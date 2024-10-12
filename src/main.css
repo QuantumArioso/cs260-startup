@@ -23,6 +23,32 @@ header {
 
 footer {
     bottom: 0;
+    width: 100%;
+}
+
+@media (max-width: 768px) {
+    header, footer {
+        text-align: center;
+        padding: 0.5em;
+    }
+
+    main {
+        margin-top: 50px; /* Adjust based on header height */
+        margin-bottom: 50px; /* Adjust based on footer height */
+        padding: 0.5em;
+    }
+}
+
+@media (max-width: 480px) {
+    header, footer {
+        padding: 0.25em;
+    }
+
+    main {
+        margin-top: 40px; /* Adjust based on header height */
+        margin-bottom: 40px; /* Adjust based on footer height */
+        padding: 0.25em;
+    }
 }
 
 body {
