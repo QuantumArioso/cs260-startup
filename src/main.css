@@ -7,6 +7,7 @@ header, footer {
     position: flex;
     left: 0;
     padding-left: 20px;
+    font-family: Verdana, sans-serif;
 }
 
 a:link {
@@ -19,6 +20,10 @@ a:visited {
 
 header {
     top: 0;
+}
+
+body {
+    font-family: Arial, sans-serif;
 }
 
 footer {

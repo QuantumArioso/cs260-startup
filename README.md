@@ -38,5 +38,5 @@ I used CSS to style my application.
 - There are navigation elements contained in the header, and I changed the color of the links to match my website's theme.
 - Responsive to window sizing: My application resizes and fits onto all screen sizes.
 - Application elements: PUT IN MORE HOW IT LOOKS
-- Application text content: MAYBE PLAY WITH FONTS
+- Application text content: Consistent font family and easy-to-read text
 - Application images: DO SOMETHING WITH THE IMAGE?
