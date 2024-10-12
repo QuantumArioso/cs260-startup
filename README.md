@@ -31,3 +31,12 @@ I used HTML for the structure of my website.
 - The textual content for the homepage is added, as well as headings and placeholder content on the other pages.
 - The calendar represents data from the database.
 - The calendar and meeting links will be updated in realtime using WebSocket.
+
+### CSS Deliverable
+I used CSS to style my application.
+- Each page contains a header, footer, and body for the content.
+- There are navigation elements contained in the header, and I changed the color of the links to match my website's theme.
+- Responsive to window sizing: NEED TO IMPLEMENT
+- Application elements: PUT IN MORE HOW IT LOOKS
+- Application text content: MAYBE PLAY WITH FONTS
+- Application images: DO SOMETHING WITH THE IMAGE?
