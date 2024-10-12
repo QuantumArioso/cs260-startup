@@ -36,7 +36,7 @@ I used HTML for the structure of my website.
 I used CSS to style my application.
 - Each page contains a header, footer, and body for the content.
 - There are navigation elements contained in the header, and I changed the color of the links to match my website's theme.
-- Responsive to window sizing: NEED TO IMPLEMENT
+- Responsive to window sizing: My application resizes and fits onto all screen sizes.
 - Application elements: PUT IN MORE HOW IT LOOKS
 - Application text content: MAYBE PLAY WITH FONTS
 - Application images: DO SOMETHING WITH THE IMAGE?
