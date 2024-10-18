@@ -685,3 +685,244 @@ Just remember the main steps:
 7. Run your code with node index.js  
 
 Browser to "localhost:8080" to see your website
+
+## Midterm Questions
+In the following code, what does the link element do?  
+- It links to a CSS file  
+In the following code,  what does a div tag do?  
+- It creates a division element  
+In the following code, what is the difference between the #title and .grid selector?  
+- #title is an id selector and .grid is a class selector  
+In the following code, what is the difference between padding and margin?  
+- Padding puts space around the content of selected elements and margin puts space around the outside of selected elements  
+Given this HTML and this CSS how will the images be displayed using flex?  
+
+To display images using flexbox, you can use the following HTML and CSS:
+
+```html
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Flexbox Image Gallery</title>
+    <style>
+        .gallery {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 10px;
+        }
+        .gallery img {
+            max-width: 100%;
+            height: auto;
+        }
+        .gallery-item {
+            flex: 1 1 calc(33.333% - 10px);
+            box-sizing: border-box;
+        }
+    </style>
+</head>
+<body>
+    <div class="gallery">
+        <div class="gallery-item"><img src="image1.jpg" alt="Image 1"></div>
+        <div class="gallery-item"><img src="image2.jpg" alt="Image 2"></div>
+        <div class="gallery-item"><img src="image3.jpg" alt="Image 3"></div>
+        <div class="gallery-item"><img src="image4.jpg" alt="Image 4"></div>
+        <div class="gallery-item"><img src="image5.jpg" alt="Image 5"></div>
+        <div class="gallery-item"><img src="image6.jpg" alt="Image 6"></div>
+    </div>
+</body>
+</html>
+```
+
+In this example:
+- The `.gallery` class uses `display: flex` to create a flex container.
+- The `flex-wrap: wrap` property allows the images to wrap to the next line if they don't fit in one row.
+- The `gap: 10px` property adds space between the images.
+- Each `.gallery-item` is set to take up one-third of the container's width minus the gap, ensuring a responsive layout.
+  
+What does the following padding CSS do?  
+- It puts some pixels of padding on all sides of the element  
+What does the following code using arrow syntax function declaration do?  
+
+### Arrow Functions  
+Because functions are first order objects in JavaScript they can be declared anywhere and passed as parameters. This results in code with lots of anonymous functions cluttering things up. To make the code more compact the arrow syntax was created. This syntax replaces the need for the function keyword with the symbols => placed after the parameter declaration. The enclosing curly braces are also optional.
+
+This is a function in arrow syntax that takes no parameters and always returns 3.
+
+() => 3;
+The following two invocations of sort are equivalent.
+
+const a = [1, 2, 3, 4];
+
+// standard function syntax
+a.sort(function (v1, v2) {
+    return v1 - v2;
+});
+
+// arrow function syntax
+a.sort((v1, v2) => v1 - v2);
+Besides being compact, the arrow function syntax has some important semantic differences from the standard function syntax. This includes restrictions that arrow functions cannot be used for constructors or iterator generators.
+
+Return values
+Arrow functions also have special rules for the return keyword. The return keyword is optional if no curly braces are provided for the function and it contains a single expression. In that case the result of the expression is automatically returned. If curly braces are provided then the arrow function behaves just like a standard function.
+
+() => 3;
+// RETURNS: 3
+
+() => {
+    3;
+};
+// RETURNS: undefined
+
+() => {
+    return 3;
+};
+// RETURNS: 3
+This pointer
+Next, arrow functions inherit the this pointer from the scope of where it is created. This makes what is known as a closure. A closure allows a function to continue referencing its creation scope, even after it has passed out of that scope. This can be tricky to wrap your head around, and we discuss it in detail when we later talk about JavaScript scope. For now consider the following example.
+
+The function makeClosure returns an anonymous function using the arrow syntax. Notice that the a parameter is overridden, a new b variable is created, and both a and b are referenced in the arrow function. Because of that reference, they are both part of the closure for the returned function.
+
+function makeClosure(a) {
+    a = 'a2';
+    const b = 'b2';
+    return () => [a, b];
+}
+Next, we declare the variables a and b at the top level scope, and call makeClosure with a.
+
+const a = 'a';
+const b = 'b';
+
+const closure = makeClosure(a);
+Now, when we call closure function it will output the values contained in scope where it was created instead of the current values of the variables.
+
+console.log(closure());
+// OUTPUT: ['a2', 'b2']
+
+console.log(a, b);
+// OUTPUT: 'a' 'b'
+Closures provide a valuable property when we do things like execute JavaScript within the scope of an HTML page, because it can remember the values of variables when the function was created instead of what they are when they are executed.
+
+Putting it all together
+Now that you know how functions work in JavaScript, let's look at an example that demonstrates the use of functions, arrow functions, parameters, a function as a parameter (callback), closures, and browser event listeners. This is done by implementing a debounce function.
+
+The point of a debounce function is to only execute a specified function once within a given time window. Any requests to execute the debounce function more frequently than this will case the time window to reset. This is important in cases where a user can trigger expensive events thousands of times per second. Without a debounce the performance of your application can greatly suffer.
+
+The following code calls the browser's window.addEventListener function to add a callback function that is invoked whenever the user scrolls the browser's web page. The first parameter to addEventListener specifies that it wants to listen for scroll events. The second parameter provides the function to call when a scroll event happens. In this case we call a function named debounce.
+
+The debounce function takes two parameters, the time window for executing the window function, and the window function to call within that limit. In this case we will execute the arrow function at most every 500 milliseconds.
+
+window.addEventListener(
+    'scroll',
+    debounce(500, () => {
+        console.log('Executed an expensive calculation');
+    })
+);
+The debounce function implements the execution of windowFunc within the restricted time window by creating a closure that contains the current timeout and returning a function that will reset the timeout every time it is called. The returned function is what the scroll event will actually call when the user scrolls the page. However, instead of directly executing the windowFunc it sets a timer based on the value of windowMs. If the debounce function is called again before the window times out then it resets the timeout.
+
+function debounce(windowMs, windowFunc) {
+    let timeout;
+    return function () {
+        console.log('scroll event');
+        clearTimeout(timeout);
+        timeout = setTimeout(() => windowFunc(), windowMs);
+    };
+}  
+
+
+What does the following code using map with an array output?  
+```javascript
+const numbers = [1, 2, 3, 4, 5];
+const doubled = numbers.map(num => num * 2);
+console.log(doubled); // OUTPUT: [2, 4, 6, 8, 10]
+```  
+What does the following code output using getElementByID and addEventListener?  
+- getElementByID selects an element by its id and addEventListener adds an event listener to the element  
+What does the following line of Javascript do using a # selector?  
+- It selects an element by its id  
+Which of the following are true? (mark all that are true about the DOM)  
+- The DOM is an object representation of the HTML elements that the browser uses to render the display  
+- The browser exposes the DOM to external code so that you can write programs that dynamically manipulate the HTML  
+- The DOM is a tree structure with the document node at the top  
+- The DOM supports the ability to insert, modify, or delete the elements in the DOM  
+- The DOM supports the ability to attach a function that gets called when an event occurs on the element  
+- The DOM supports the ability to inject entire blocks of HTML into an element  
+- The DOM supports the ability to select elements from the document using a CSS selector  
+- The DOM supports the ability to access the parent element of an element  
+- The DOM supports the ability to access the child elements of an element  
+- The DOM supports the ability to access the text content of an element  
+By default, the HTML span element has a default CSS display property value of:   
+- inline  
+How would you use CSS to change all the div elements to have a background color of red?  
+- div { background-color: red; }  
+How would you display an image with a hyperlink in HTML?  
+- \<a href="https://www.google.com"\>\<img src="image.jpg" alt="image"\>\</a\>  
+In the CSS box model, what is the ordering of the box layers starting at the inside and working out?  
+- content, padding, border, margin
+Given the following HTML, what CSS would you use to set the text "trouble" to green and leave the "double" text unaffected?  
+- set the color of the p element to green  
+What will the following code output when executed using a for loop and console.log?  
+- For loop stuff  
+How would you use JavaScript to select an element with the id of “byu” and change the text color of that element to green?  
+- document.getElementById("byu").style.color = "green";  
+What is the opening HTML tag for a paragraph, ordered list, unordered list, second level heading, first level heading, third level heading?  
+- \<p\>, \<ol\>, \<ul\>, \<h2\>, \<h1\>, \<h3\>
+How do you declare the document type to be html?  
+- \<!DOCTYPE html\>  
+What is valid javascript syntax for if, else, for, while, switch statements?  
+- if (x > y) { alert("Hello World"); } else { alert("Goodbye"); }  
+- for (i = 0; i < 10; i++) { console.log(i); }  
+- switch(fruits) { case "Banana": alert("Hello") break; case "Apple": alert("Welcome") break; default: alert("Neither"); }  
+- while (i < 10) { console.log(i); i++; }  
+What is the correct syntax for creating a javascript object?  
+- const obj = { a: 3, b: "fish" };  
+Is it possible to add new properties to javascript objects?  
+- Yes  
+If you want to include JavaScript on an HTML page, which tag do you use?  
+- \<script\>  
+Given the following HTML, what JavaScript could you use to set the text "animal" to "crow" and leave the "fish" text unaffected?  
+- document.getElementById("animal").textContent = "crow";  
+Which of the following correctly describes JSON?  
+- JSON is a lightweight data-interchange format
+- JSON is easy for humans to read and write
+- JSON is easy for machines to parse and generate
+- JSON is a text format that is completely language independent
+- JSON is a subset of the JavaScript object notation syntax
+- JSON is a subset of the JavaScript object literal notation  
+What does the console command chmod, pwd, cd, ls, vim, nano, mkdir, mv, rm, man, ssh, ps, wget, sudo  do?  
+- chmod: change file permissions
+- pwd: print working directory
+- cd: change directory
+- ls: list files
+- vim: text editor
+- nano: text editor
+- mkdir: make directory
+- mv: move file
+- rm: remove
+- man: manual
+- ssh: secure shell
+- ps: process status
+- wget: download
+- sudo: super user do  
+Which of the following console command creates a remote shell session?  
+- ssh  
+Which of the following is true when the -la parameter is specified for the ls console command?  
+- It lists all files including hidden files and provides additional information about the files  
+Which of the following is true for the domain name banana.fruit.bozo.click, which is the top level domain, which is a subdomain, which is a root domain?  
+- top level domain: click
+- subdomain: banana.fruit  
+- root domain: bozo.click  
+Is a web certificate is necessary to use HTTPS.  
+- Yes  
+Can a DNS A record point to an IP address or another A record?  
+- A DNS record can only point to an IP address  
+Port 443, 80, 22 is reserved for which protocol?  
+- 443: HTTPS  
+- 80: HTTP  
+- 22: SSH  
+What will the following code using Promises output when executed?  
+- promises work by waiting until the promise is resolved
+- an example of promises is:
+    - const promise = new Promise((resolve, reject) => { setTimeout(() => resolve("done!"), 1000); });
+    - promise.then(alert);
