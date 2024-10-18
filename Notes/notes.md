@@ -38,7 +38,28 @@ Content inside padding inside border inside margin (peanut butter and margarin)
 ### JavaScript
 console.log("hello world") -- returns "undefined" (doesn't return anything)  
 declare variable: let y = 1 (var is the old one and has scope issues) (const y = 1 is constant variable declaration)  
-equality: === (triple equals)  
+equality: === (triple equals)
+Display result in alert box:  
+    let z = 10;
+    alert(z);  
+Declare variables on one line:  
+    let firstName = "John", lastName = "Doe", age = 35;
+Object:  
+    const x = {name: "Ari", movie: "Interstellar"}
+Extract info from the object:  
+    alert(x.name);
+Functions:  
+    function myFunction() {  
+        alert("Hello World!");  
+    }  
+Display inner HTML:  
+    document.getElementById("demo").innerHTHL = "Hello";  
+Click button:
+    \<button onclick="alert('Hello')">Click me.\</button>
+When hover:  
+    onmouseover  
+Length of string:  
+    string.length  
 
 ### Domain Name System (DNS)  
 (source: https://www.cloudflare.com/learning/dns/what-is-dns/)  
