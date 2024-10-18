@@ -58,8 +58,52 @@ Click button:
     \<button onclick="alert('Hello')">Click me.\</button>
 When hover:  
     onmouseover  
-Length of string:  
+Length of string or array:  
     string.length  
+Array:  
+    const stars = ["Polaris", "Sirius", "Vega"]  
+    stars.pop() //remove last item  
+    stars.push("Deneb") //append to end  
+    stars.splice(1,2) //remove "Sirius" and "Vega"  
+    stars.sort() //sort alphabetically  
+Math:  
+    Math.random()  
+    Math.max(10, 20)  
+    Math.round(5.3)  
+    Math.sqrt(9)  
+If:  
+    var age = n;
+    var voteable = (age < 18) ? "Too young" : "Old enough";
+    alert(voteable); //if age < 18 alerts "Too young", else alerts "Old enough"  
+
+    if (x > y) {
+        alert("Hello World");
+    } else {
+        alert("Goodbye");
+    }  
+Switch:  
+    switch(fruits) {
+        case "Banana":
+            alert("Hello")
+            break;
+        case "Apple":
+            alert("Welcome")
+            break;
+        default:
+            alert("Neither");
+    }  
+For loops:  
+    let i;
+    for (i = 0; i < 10; i++) {
+        console.log(i);
+    }  
+    (can also do for each like python)  
+    break = stop loop, continue = jump to next interation
+DOM:  
+    document.getElementsByTagName("p")[0]  
+    document.getElementById("demo").style.fontSize = "40px";  
+    document.getElementById("demo").addEventListener("click", myFunction);
+
 
 ### Domain Name System (DNS)  
 (source: https://www.cloudflare.com/learning/dns/what-is-dns/)  
