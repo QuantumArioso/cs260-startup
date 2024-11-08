@@ -1,0 +1,13 @@
+{
+  "name": "cs260-startup",
+  "version": "1.0.0",
+  "description": "[Notes File](notes.md)",
+  "main": "index.js",
+  "directories": {
+    "test": "test"
+  },"scripts": {
+    "dev": "vite",
+    "build": "vite build",
+    "preview": "vite preview"
+  }
+}
