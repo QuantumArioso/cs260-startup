@@ -1,4 +1,5 @@
 import React from 'react';
+import '../app.css';
 
 export function Meetings() {
   return (
@@ -7,7 +8,7 @@ export function Meetings() {
         This page will store the calendar events in the database */} 
         <section>
             <h2>Meetings</h2>
-            <div class="meetings-placeholder">
+            <div className="meetings-placeholder">
                 {/* Placeholder for meeting link */}
                 <p>Meeting link will be placed here</p>
             </div>
@@ -34,12 +35,12 @@ export function Meetings() {
                         <td></td>
                         <td></td>
                         <td></td>
-                        <td>1<br>Happy Pride Month!</br></td>
+                        <td>1<br />Happy Pride Month!</td>
                     </tr>
                     <tr>
                         <td>2</td>
                         <td>3</td>
-                        <td>4<br>6pm: Trans Come Follow Me</br></td>
+                        <td>4<br />6pm: Trans Come Follow Me</td>
                         <td>5</td>
                         <td>6</td>
                         <td>7</td>
@@ -49,7 +50,7 @@ export function Meetings() {
                         <td>9</td>
                         <td>10</td>
                         <td>11</td>
-                        <td>12<br>7pm: Game Night</br></td>
+                        <td>12<br />7pm: Game Night</td>
                         <td>13</td>
                         <td>14</td>
                         <td>15</td>

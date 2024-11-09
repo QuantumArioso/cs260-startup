@@ -20,7 +20,7 @@ export default function App() {
           </div>
           <menu className='navbar-nav'>
             <li className='nav-item'>
-              <NavLink className='nav-link' to='home'>
+              <NavLink className='nav-link' to=''>
                 Home
               </NavLink>
             </li>
@@ -43,8 +43,6 @@ export default function App() {
         </nav>
         </header>
 
-        <main>App components go here</main>
-
         <Routes>
           <Route path='/' element={<Home />} exact />
           <Route path='/login' element={<Login />} />
@@ -55,10 +53,8 @@ export default function App() {
 
         <footer className='bg-dark text-white-50'>
           <div className='container-fluid'>
-            <span className='text-reset'>Author Name(s)</span>
-            <a className='text-reset' href='https://github.com/webprogramming260/simon-react'>
-              Source
-            </a>
+            <span className='text-reset'>Ari Tanner</span>
+            <a href="https://github.com/QuantumArioso/cs260-startup">GitHub Repo</a>
           </div>
         </footer>
       </div>
