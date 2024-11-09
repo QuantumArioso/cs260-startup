@@ -18,7 +18,7 @@ export default function App() {
           </div>
           <menu className='navbar-nav'>
             <li className='nav-item'>
-              <NavLink className='nav-link' to=''>
+              <NavLink className='nav-link' to='home'>
                 Home
               </NavLink>
             </li>
@@ -44,10 +44,10 @@ export default function App() {
         <main>App components go here</main>
 
         <Routes>
-          <Route path='/' element={<Login />} exact />
-          <Route path='/play' element={<Play />} />
-          <Route path='/scores' element={<Scores />} />
-          <Route path='/about' element={<About />} />
+          <Route path='/home' element={<Home />} exact />
+          <Route path='/login' element={<Login />} />
+          <Route path='/meetings' element={<Meetings />} />
+          <Route path='/resources' element={<Resources />} />
           <Route path='*' element={<NotFound />} />
         </Routes>
 
