@@ -1,17 +1,26 @@
 import React from 'react';
 import '../app.css';
+import { useNavigate } from 'react-router-dom';
 
 export function Login() {
+    const navigate = useNavigate();
+
+    const handleSubmit = (event) => {
+        event.preventDefault(); // Prevent the default form submission
+        // Perform any login logic here (e.g., authentication)
+        navigate('/meetings'); // Navigate to the meetings route
+    };
+
   return (
     <main>
         <section>
             <h2>Login</h2>
-            <form action="meetings.html" method="get"> {/* This is a placeholder for the login form action */}
+            <form onSubmit={ handleSubmit }>
                 <input type="text" placeholder="Username" required></input>
                 <input type="password" placeholder="Password" required></input>
-                <button type="submit" onclick="window.location.href='./meetings.html';">Login</button>
+                <button type="submit">Login</button>
             </form>
-            <a href="#" class="create-account">Create a new account</a>
+            <a href="#" className="create-account">Create a new account</a>
         </section>
     </main>
   );
