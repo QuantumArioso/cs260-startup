@@ -6,6 +6,7 @@ import { Home } from './home/home';
 import { Login } from './login/login';
 import { Meetings } from './meetings/meetings';
 import { Resources } from './resources/resources';
+import { DEFAULT_MIN_BREAKPOINT } from 'react-bootstrap/esm/ThemeProvider';
 
 export default function App() {
   return (
@@ -14,7 +15,8 @@ export default function App() {
         <header className='container-fluid'>
         <nav className='navbar fixed-top navbar-dark'>
           <div className='navbar-brand'>
-            Simon<sup>&reg;</sup>
+            <h1>Transgender Latter-day Saints</h1>
+            <img src="./trans_flag.png" alt="An image of a trans flag" width="80"></img>
           </div>
           <menu className='navbar-nav'>
             <li className='nav-item'>
@@ -44,7 +46,7 @@ export default function App() {
         <main>App components go here</main>
 
         <Routes>
-          <Route path='/home' element={<Home />} exact />
+          <Route path='/' element={<Home />} exact />
           <Route path='/login' element={<Login />} />
           <Route path='/meetings' element={<Meetings />} />
           <Route path='/resources' element={<Resources />} />
