@@ -40,3 +40,10 @@ I used CSS to style my application.
 - Application elements: Color theme, fixed header and footer, spacing
 - Application text content: Consistent font family and easy-to-read text
 - Application images: Rounded the image corners
+
+### React Deliverable
+I used React to tie my application together.
+- Bundled using Vite: I did this
+- Multiple react components: The home page links to the other pages. The header and footer are separate components that repeat on each page. On the login pages, the user can press submit to navigate to the meetings page.
+- Router: I used the router to navigate between pages.
+- Hooks: I used the useNavigate hook on login.jsx to navigate to the meetings page. (MAKE SURE THIS ACTUALLY WORKS)
