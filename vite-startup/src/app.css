@@ -3,7 +3,6 @@
     display: flex;
     flex-direction: column;
     height: auto;
-    overflow-y: scroll;
     font-family: Arial, sans-serif;
 }
 
@@ -17,6 +16,7 @@ header, footer {
     left: 0;
     padding-left: 20px;
     font-family: Verdana, sans-serif;
+    flex: 0, 25px;
 }
 
 a:link {
@@ -27,14 +27,14 @@ a:visited {
     color: #54bce3;
 }
 
-header {
+/* header {
     top: 0;
 }
 
 footer {
     bottom: 0;
     width: 100%;
-}
+} */
 
 @media (max-width: 768px) {
     header, footer {
