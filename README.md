@@ -46,4 +46,4 @@ I used React to tie my application together.
 - Bundled using Vite: I did this
 - Multiple react components: The home page links to the other pages. The header and footer are separate components that repeat on each page. On the login pages, the user can press submit to navigate to the meetings page.
 - Router: I used the router to navigate between pages.
-- Hooks: I used the useNavigate hook on login.jsx to navigate to the meetings page. (MAKE SURE THIS ACTUALLY WORKS)
+- Hooks: I used the useNavigate hook on login.jsx to navigate to the meetings page.
