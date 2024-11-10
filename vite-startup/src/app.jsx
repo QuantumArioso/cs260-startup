@@ -29,11 +29,11 @@ export default function App() {
                 Login
               </NavLink>
             </li>
-            <li className='nav-item'>
+            {/* <li className='nav-item'>
               <NavLink className='nav-link' to='meetings'>
                 Meetings
               </NavLink>
-            </li>
+            </li> */}
             <li className='nav-item'>
               <NavLink className='nav-link' to='resources'>
                 Resources
@@ -53,7 +53,7 @@ export default function App() {
 
         <footer className='bg-dark text-white-50'>
           <div className='container-fluid'>
-            <span className='text-reset'>Ari Tanner</span>
+            <span className='text-reset'>Ari Tanner  </span>
             <a href="https://github.com/QuantumArioso/cs260-startup">GitHub Repo</a>
           </div>
         </footer>
