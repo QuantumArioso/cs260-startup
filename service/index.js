@@ -21,3 +21,7 @@ const port = process.argv.length > 2 ? process.argv[2] : 3000;
 app.listen(port, () => {
   console.log(`Listening on port ${port}`);
 });
+
+// what do I need endpoints for?
+// display entered username--take username from login, store in localstorage, retrieve username and display
+// calendar edits (idk if this will be implemented ever)
