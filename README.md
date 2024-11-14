@@ -47,3 +47,10 @@ I used React to tie my application together.
 - Multiple react components: The home page links to the other pages. The header and footer are separate components that repeat on each page. On the login pages, the user can press submit to navigate to the meetings page.
 - Router: I used the router to navigate between pages.
 - Hooks: I used the useNavigate hook on login.jsx to navigate to the meetings page.
+
+### Service Deliverable
+- HTTP service with node.js and express:
+- Frontend served up using Express static middleware: 
+- Frontend calls third-party API:
+- Backend provides endpoints:
+- Frontend calls endpoints: 
