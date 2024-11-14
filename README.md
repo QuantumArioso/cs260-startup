@@ -49,7 +49,7 @@ I used React to tie my application together.
 - Hooks: I used the useNavigate hook on login.jsx to navigate to the meetings page.
 
 ### Service Deliverable
-- HTTP service with node.js and express:
+- HTTP service with node.js and express: done
 - Frontend served up using Express static middleware: 
 - Frontend calls third-party API:
 - Backend provides endpoints:
