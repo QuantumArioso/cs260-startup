@@ -14,6 +14,8 @@ app.use(`/api`, apiRouter);
 
 const port = process.argv.length > 2 ? process.argv[2] : 3000;
 
+// looking at get scores in Simon and trying to figure out how it works but I have no idea how it's supposed to get a score
+
 // app.get('*', (_req, res) => {
 //   res.send({ msg: 'Startup service' });
 // });
