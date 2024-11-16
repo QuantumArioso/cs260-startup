@@ -3,23 +3,23 @@ import '../app.css';
 import { Button } from 'react-bootstrap';
 
 export function Meetings() {
-  const [teststuff, setTeststuff] = React.useState('Starting Test');
+  const [not_clicked, clicked] = React.useState('Click the button to confirm if you are attending the meeting');
 
-  function handleClick() {
+  function meetingAttendance() {
     console.log('Button clicked');
-    fetch('/api/test')
+    fetch('/api/attending')
         .then((response) => response.json())
-        .then((testing) => {
-            console.log(testing);
-            console.log(testing.test);
-            setTeststuff(testing.test);
+        .then((attendance) => {
+            console.log(attendance);
+            console.log(attendance.attending);
+            clicked(attendance.attending);
         });
     }
 
   return (
     <main>
-        <Button onClick={handleClick}>Test</Button>
-        <div> {teststuff} </div>
+        <Button onClick={meetingAttendance}>Yes!</Button>
+        <div> {not_clicked} </div>
         {/* Websocket will be used on this page to update the link and calendar events in real time from the users with those permissions
         This page will store the calendar events in the database */} 
         <section>

@@ -2,7 +2,7 @@ import React from 'react';
 import '../app.css';
 import { useNavigate } from 'react-router-dom';
 
-export function Login( userName ) {
+export function Login() {
     const navigate = useNavigate();
 
     const handleSubmit = (event) => {

@@ -22,10 +22,10 @@ app.use(express.static('public'));
 //   res.send({ msg: 'Startup service' });
 // });
 
-var testdata = {test: "test"};
-apiRouter.get('/test', (_req, res) => {
+var attendance = {attending: "Attendance confirmed!"};
+apiRouter.get('/attending', (_req, res) => {
     console.log('In test');
-    res.send(testdata);
+    res.send(attendance);
 });
 
 app.listen(port, () => {
