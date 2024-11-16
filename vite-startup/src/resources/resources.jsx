@@ -1,21 +1,9 @@
 import React from 'react';
 import '../app.css';
-import { Button } from 'react-bootstrap';
-
-function handleClick() {
-    console.log('Button clicked');
-    fetch('/api/test')
-        .then((response) => response.json())
-        .then((testing) => {
-            console.log(testing);
-            console.log(testing.test);
-        });
-}
 
 export function Resources() {
   return (
     <main>
-        <Button onClick={handleClick}>Test</Button>
         <section>
             <h2>Church Statements</h2>
             <div className="statements-placeholder">

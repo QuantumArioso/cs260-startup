@@ -1,9 +1,21 @@
 import React from 'react';
 import '../app.css';
+import { Button } from 'react-bootstrap';
+
+function handleClick() {
+    console.log('Button clicked');
+    fetch('/api/test')
+        .then((response) => response.json())
+        .then((testing) => {
+            console.log(testing);
+            console.log(testing.test);
+        });
+}
 
 export function Meetings() {
   return (
     <main>
+        <Button onClick={handleClick}>Test</Button>
         {/* Websocket will be used on this page to update the link and calendar events in real time from the users with those permissions
         This page will store the calendar events in the database */} 
         <section>

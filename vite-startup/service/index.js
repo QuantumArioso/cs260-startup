@@ -5,8 +5,7 @@ const uuid = require('uuid');
 app.use(express.json()); // all the data is stored in JSON
 
 // TODO: replace with my variables
-let users = {};
-let scores = [];
+let user;
 
 // set up router path for the endpoints
 var apiRouter = express.Router();
