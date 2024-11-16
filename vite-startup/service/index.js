@@ -14,6 +14,9 @@ app.use(`/api`, apiRouter);
 
 const port = process.argv.length > 2 ? process.argv[2] : 3000;
 
+// Serve up the front-end static content hosting
+app.use(express.static('public'));
+
 // looking at get scores in Simon and trying to figure out how it works but I have no idea how it's supposed to get a score
 
 // app.get('*', (_req, res) => {
@@ -21,7 +24,7 @@ const port = process.argv.length > 2 ? process.argv[2] : 3000;
 // });
 
 var testdata = {test: "test"};
-apiRouter.get('/test', (_req, res) => {
+apiRouter.get('/resources', (_req, res) => {
     console.log('In test');
     res.send(testdata);
 });
