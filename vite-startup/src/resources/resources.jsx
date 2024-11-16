@@ -4,7 +4,7 @@ import { Button } from 'react-bootstrap';
 
 function handleClick() {
     console.log('Button clicked');
-    fetch('api/test')
+    fetch('/api/test')
         .then((response) => response.json())
         .then((testing) => {
             console.log(testing);

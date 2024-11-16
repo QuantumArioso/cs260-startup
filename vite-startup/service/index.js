@@ -24,7 +24,7 @@ app.use(express.static('public'));
 // });
 
 var testdata = {test: "test"};
-apiRouter.get('/resources', (_req, res) => {
+apiRouter.get('/test', (_req, res) => {
     console.log('In test');
     res.send(testdata);
 });
