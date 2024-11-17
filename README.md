@@ -50,7 +50,7 @@ I used React to tie my application together.
 
 ### Service Deliverable
 - HTTP service with node.js and express: done
-- Frontend served up using Express static middleware: 
-- Frontend calls third-party API:
-- Backend provides endpoints:
-- Frontend calls endpoints: 
+- Frontend served up using Express static middleware: done
+- Frontend calls third-party API: generates a random cat photo every time the resources page is loaded
+- Backend provides endpoints: api router with attendance in index.js
+- Frontend calls endpoints: information sent and displayed in meetings.jsx
