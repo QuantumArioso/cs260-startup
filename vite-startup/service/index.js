@@ -1,5 +1,6 @@
 const express = require('express');
 const app = express();
+const cors = require('cors');
 const uuid = require('uuid');
 
 app.use(express.json()); // all the data is stored in JSON
