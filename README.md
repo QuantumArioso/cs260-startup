@@ -54,3 +54,10 @@ I used React to tie my application together.
 - Frontend calls third-party API: generates a random cat photo every time the resources page is loaded
 - Backend provides endpoints: api router with attendance in index.js
 - Frontend calls endpoints: information sent and displayed in meetings.jsx
+
+### DB/Login Deliverable
+- Supports new user registration:
+- Supports existing user authentication and logout:
+- Stores application data in MongoDB:
+- Stores and retrieves credentials in MongoDB:
+- Restricts application functionality based upon authentication: 
