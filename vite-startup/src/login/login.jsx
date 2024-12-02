@@ -68,6 +68,34 @@ export function Login() {
         }
     }
 
+    // create the function to handle a new user
+    const [newUsername, setNewUsername] = useState('');
+    const [newPassword, setNewPassword] = useState('');
+    useEffect(() => {
+        const newUsernameElement = document.getElementById('username');
+        const newPasswordElement = document.getElementById('password');
+
+        if (newUsernameElement && newPasswordElement) {
+        setNewUsername(newUsernameElement.value);
+        setNewPassword(newPasswordElement.value);
+        console.log(newUsernameElement.value);
+        }
+        console.log(newUsername);
+    }, []);
+    const createUser = () => {
+        console.log("In create user function");
+
+        try {
+            fetch('/api/auth/create', {headers: { email: newUsername, password: newPassword }})
+            .then((response) => response.json())
+            .then((create) => {
+                console.log(create);
+            });
+        }
+        catch (error) {
+            console.error('Error:', error);
+        }
+    }
 
   return (
     <main>
@@ -76,14 +104,14 @@ export function Login() {
             <div>
                 <input type="text" placeholder="Username" required id="username"></input>
                 <input type="password" placeholder="Password" required id="password"></input>
-                <button type="submit" onClick={login()}>Login</button>
+                <button type="submit" onClick={login}>Login</button>
             </div>
             {/* <form onSubmit={ handleSubmit }>
                 <input type="text" placeholder="Username" required></input>
                 <input type="password" placeholder="Password" required></input>
                 <button type="submit">Login</button>
             </form> */}
-            <a href="#" className="create-account">Create a new account</a>
+            <a href="#" className="create-account" onClick={createUser}>Create a new account</a>
         </section>
     </main>
   );
