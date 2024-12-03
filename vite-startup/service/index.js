@@ -8,7 +8,7 @@ const DB = require('./database.js');
 
 const authCookieName = 'token';
 
-const port = process.argv.length > 2 ? process.argv[2] : 3000;
+const port = process.argv.length > 2 ? process.argv[2] : 4000;
 
 app.use(express.json()); // all the data is stored in JSON
 

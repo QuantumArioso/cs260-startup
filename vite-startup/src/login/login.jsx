@@ -69,6 +69,8 @@ export function Login() {
     }
 
     // create the function to handle a new user
+    // TODO: WHY IS IT BEING ROUTED THROUGH THE secureAPIRouter (in index.js line 76)
+    // Because the secureAPIRouter is the only router that is being used in the index.js file (what copilot said)
     const [newUsername, setNewUsername] = useState('');
     const [newPassword, setNewPassword] = useState('');
     useEffect(() => {
@@ -106,11 +108,6 @@ export function Login() {
                 <input type="password" placeholder="Password" required id="password"></input>
                 <button type="submit" onClick={login}>Login</button>
             </div>
-            {/* <form onSubmit={ handleSubmit }>
-                <input type="text" placeholder="Username" required></input>
-                <input type="password" placeholder="Password" required></input>
-                <button type="submit">Login</button>
-            </form> */}
             <a href="#" className="create-account" onClick={createUser}>Create a new account</a>
         </section>
     </main>
