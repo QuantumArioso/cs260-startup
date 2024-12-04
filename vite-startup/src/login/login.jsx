@@ -67,6 +67,7 @@ export function Login() {
             .then((response) => response.json())
             .then((create) => {
                 console.log(create);
+                navigate('/meetings');
             });
         }
         catch (error) {
