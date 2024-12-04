@@ -61,6 +61,6 @@ I used React to tie my application together.
 - Supports existing user authentication and logout: Yes 
     - logout button on meetings page
     - will not login if the username/password is incorrect
-- Stores application data in MongoDB: Yes
-- Stores and retrieves credentials in MongoDB: Yes
-- Restricts application functionality based upon authentication: Yes (can't access meetings page until you log in)
+- Stores application data in MongoDB: Yes, stores the user information
+- Stores and retrieves credentials in MongoDB: Yes, from login page
+- Restricts application functionality based upon authentication: Yes, can't access meetings page until you log in
