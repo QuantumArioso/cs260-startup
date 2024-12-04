@@ -56,7 +56,7 @@ I used React to tie my application together.
 - Frontend calls endpoints: information sent and displayed in meetings.jsx
 
 ### DB/Login Deliverable
-- Supports new user registration:
+- Supports new user registration: Completed (on login page)
 - Supports existing user authentication and logout:
 - Stores application data in MongoDB:
 - Stores and retrieves credentials in MongoDB:

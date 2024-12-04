@@ -30,10 +30,13 @@ export function Login() {
         console.log("In login function");
 
         try {
-            fetch('/api/auth/login', {headers: { email: username, password: password }})
+            fetch('/api/auth/login', {method: 'post', body: JSON.stringify({ email: username, password: password }), headers: {
+                'Content-type': 'application/json; charset=UTF-8',
+              }})
             .then((response) => response.json())
             .then((login) => {
                 console.log(login);
+                navigate('/meetings');
             });
         }
         catch (error) {
