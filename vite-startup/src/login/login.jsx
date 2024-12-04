@@ -13,76 +13,90 @@ export function Login() {
     //     navigate('/meetings'); // Navigate to the meetings route
     // };
 
-    const [username, setUsername] = useState('');
-    const [password, setPassword] = useState('');
-    useEffect(() => {
-        const usernameElement = document.getElementById('username');
-        const passwordElement = document.getElementById('password');
+    // const [username, setUsername] = useState('');
+    // const [password, setPassword] = useState('');
+    // useEffect(() => {
+    //     const usernameElement = document.getElementById('username');
+    //     const passwordElement = document.getElementById('password');
 
-        if (usernameElement && passwordElement) {
-        setUsername(usernameElement.value);
-        setPassword(passwordElement.value);
-        console.log(usernameElement.value);
-        }
-        console.log(username);
-    }, []);
+    //     if (usernameElement && passwordElement) {
+    //     setUsername(usernameElement.value);
+    //     setPassword(passwordElement.value);
+    //     console.log(usernameElement.value);
+    //     }
+    //     console.log(username);
+    // }, []);
     const login = () => {
-        console.log("In login function");
+      const username = document.getElementById('username').value;
+      const password = document.getElementById('password').value;
+      console.log("In login function");
+      console.log(username, password);
+      console.log("after username and password should be output")
+        
 
         try {
             fetch('/api/auth/login', {method: 'post', body: JSON.stringify({ email: username, password: password }), headers: {
                 'Content-type': 'application/json; charset=UTF-8',
               }})
-            .then((response) => response.json())
-            .then((login) => {
-                console.log(login);
-                navigate('/meetings');
-            });
+              .then(response => {
+                if (response.status === 401) {
+                  return response.json().then(data => {
+                    console.log(data.msg); // 'Unauthorized'
+                  });
+                } else {
+                  return response.json().then(data => {
+                    console.log(data.id); // The user ID
+                    navigate('/meetings');
+                  });
+                }
+        });
+            // .then((response) => response.json())
+            // .then((login) => {
+            //     console.log(login);
+            //     navigate('/meetings');
+            // });
         }
         catch (error) {
             console.error('Error:', error);
         }
     }
 
-    const [newUsername, setNewUsername] = useState('');
-    const [newPassword, setNewPassword] = useState('');
-    useEffect(() => {
-        const newUsernameElement = document.getElementById('username');
-        const newPasswordElement = document.getElementById('password');
+    // const [newUsername, setNewUsername] = useState('');
+    // const [newPassword, setNewPassword] = useState('');
+    // useEffect(() => {
+    //     const newUsernameElement = document.getElementById('username');
+    //     const newPasswordElement = document.getElementById('password');
 
-        if (newUsernameElement && newPasswordElement) {
-        setNewUsername(newUsernameElement.value);
-        setNewPassword(newPasswordElement.value);
-        console.log(newUsernameElement.value);
-        }
-        console.log(newUsername);
-    }, []);
+    //     if (newUsernameElement && newPasswordElement) {
+    //     setNewUsername(newUsernameElement.value);
+    //     setNewPassword(newPasswordElement.value);
+    //     console.log(newUsernameElement.value);
+    //     }
+    //     console.log(newUsername);
+    // }, []);
     const createUser = () => {
+        const newUsernameElement = document.getElementById('username').value;
+        const newPasswordElement = document.getElementById('password').value;
         console.log("In create user function");
-        console.log(newUsername, newPassword)
+        console.log(newUsernameElement, newPasswordElement);
+        console.log("after newUsername and newPassword should be output")
 
         try {
-            fetch('/api/auth/create', {method: 'post', body: JSON.stringify({ email: newUsername, password: newPassword }), headers: {
+            fetch('/api/auth/create', {method: 'post', body: JSON.stringify({ email: newUsernameElement, password: newPasswordElement }), headers: {
                 'Content-type': 'application/json; charset=UTF-8',
               }})
               .then(response => {
-                if (response.status === 409) {
+                if (response?.status === 200) {
                   return response.json().then(data => {
-                    console.log(data.msg); // 'Existing user'
-                    // Handle the existing user case here
-                    //TODO: this is happening whether or not the user already exists
+                    console.log(data.id); // The new user ID
+                    navigate('/meetings');
                   });
                 } else {
                   return response.json().then(data => {
-                    console.log(data.id); // The new user ID
-                    // Handle other responses
+                    console.log(data.msg); // 'Existing user'
                   });
                 }
-              })
-            .then((create) => {
-                console.log(create);
-                navigate('/meetings');
-            });
+              });
         }
         catch (error) {
             console.error('Error:', error);
