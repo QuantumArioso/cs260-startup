@@ -7,11 +7,11 @@ import { useState } from 'react';
 export function Login() {
     const navigate = useNavigate();
 
-    const handleSubmit = (event) => {
-        event.preventDefault(); // Prevent the default form submission
-        // Perform any login logic here (e.g., authentication)
-        navigate('/meetings'); // Navigate to the meetings route
-    };
+    // const handleSubmit = (event) => {
+    //     event.preventDefault(); // Prevent the default form submission
+    //     // Perform any login logic here (e.g., authentication)
+    //     navigate('/meetings'); // Navigate to the meetings route
+    // };
 
     const [username, setUsername] = useState('');
     const [password, setPassword] = useState('');
@@ -44,8 +44,6 @@ export function Login() {
         }
     }
 
-    // create the function to handle a new user
-    // TODO: WHY IS IT BEING ROUTED THROUGH THE secureAPIRouter (in index.js line 76)
     const [newUsername, setNewUsername] = useState('');
     const [newPassword, setNewPassword] = useState('');
     useEffect(() => {

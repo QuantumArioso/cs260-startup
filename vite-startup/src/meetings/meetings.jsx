@@ -1,9 +1,11 @@
 import React from 'react';
 import '../app.css';
 import { Button } from 'react-bootstrap';
+import { useNavigate } from 'react-router-dom';
 
 export function Meetings() {
   const [not_clicked, clicked] = React.useState('Click the button to confirm if you are attending the meeting');
+  const navigate = useNavigate();
 
   function meetingAttendance() {
     console.log('Button clicked');
@@ -16,8 +18,23 @@ export function Meetings() {
         });
     }
 
+    function logout() {
+        fetch(`/api/auth/logout`, {
+          method: 'delete',
+        })
+          .catch(() => {
+            // Logout failed. Assuming offline
+          })
+          .finally(() => {
+            localStorage.removeItem('username');
+            console.log(localStorage.getItem('username'));
+            navigate('/login');
+          });
+      }
+
   return (
     <main>
+        <Button onClick={logout}>Logout</Button>
         <Button onClick={meetingAttendance}>Yes!</Button>
         <div> {not_clicked} </div>
         {/* Websocket will be used on this page to update the link and calendar events in real time from the users with those permissions
