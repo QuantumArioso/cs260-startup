@@ -1,30 +1,3 @@
-// import React from 'react';
-
-// import { Unauthenticated } from './unauthenticated';
-// import { Authenticated } from './authenticated';
-// import { AuthState } from './authState';
-
-// export function Login({ userName, authState, onAuthChange }) {
-//   return (
-//     <main className='container-fluid bg-secondary text-center'>
-//       <div>
-//         {authState !== AuthState.Unknown && <h1>Welcome to Simon</h1>}
-//         {authState === AuthState.Authenticated && (
-//           <Authenticated userName={userName} onLogout={() => onAuthChange(userName, AuthState.Unauthenticated)} />
-//         )}
-//         {authState === AuthState.Unauthenticated && (
-//           <Unauthenticated
-//             userName={userName}
-//             onLogin={(loginUserName) => {
-//               onAuthChange(loginUserName, AuthState.Authenticated);
-//             }}
-//           />
-//         )}
-//       </div>
-//     </main>
-//   );
-// }
-
 import React from 'react';
 import '../app.css';
 import { useNavigate } from 'react-router-dom';
@@ -70,7 +43,6 @@ export function Login() {
 
     // create the function to handle a new user
     // TODO: WHY IS IT BEING ROUTED THROUGH THE secureAPIRouter (in index.js line 76)
-    // Because the secureAPIRouter is the only router that is being used in the index.js file (what copilot said)
     const [newUsername, setNewUsername] = useState('');
     const [newPassword, setNewPassword] = useState('');
     useEffect(() => {
@@ -86,9 +58,12 @@ export function Login() {
     }, []);
     const createUser = () => {
         console.log("In create user function");
+        console.log(newUsername, newPassword)
 
         try {
-            fetch('/api/auth/create', {headers: { email: newUsername, password: newPassword }})
+            fetch('/api/auth/create', {method: 'post', body: JSON.stringify({ email: newUsername, password: newPassword }), headers: {
+                'Content-type': 'application/json; charset=UTF-8',
+              }})
             .then((response) => response.json())
             .then((create) => {
                 console.log(create);

@@ -30,6 +30,7 @@ let user;
 
 // CreateAuth token for a new user
 apiRouter.post('/auth/create', async (req, res) => {
+  console.log("here")
   if (await DB.getUser(req.body.email)) {
     res.status(409).send({ msg: 'Existing user' });
   } else {
@@ -77,6 +78,12 @@ secureApiRouter.use(async (req, res, next) => {
   }
 });
 
+var attendance = {attending: "Attendance confirmed!"};
+apiRouter.get('/attending', (_req, res) => {
+    console.log('In test');
+    res.send(attendance);
+});
+
 // setAuthCookie in the HTTP response
 function setAuthCookie(res, authToken) {
   res.cookie(authCookieName, authToken, {
@@ -85,12 +92,6 @@ function setAuthCookie(res, authToken) {
     sameSite: 'strict',
   });
 }
-
-var attendance = {attending: "Attendance confirmed!"};
-apiRouter.get('/attending', (_req, res) => {
-    console.log('In test');
-    res.send(attendance);
-});
 
 app.listen(port, () => {
   console.log(`Listening on port ${port}`);
