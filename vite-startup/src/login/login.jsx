@@ -65,7 +65,20 @@ export function Login() {
             fetch('/api/auth/create', {method: 'post', body: JSON.stringify({ email: newUsername, password: newPassword }), headers: {
                 'Content-type': 'application/json; charset=UTF-8',
               }})
-            .then((response) => response.json())
+              .then(response => {
+                if (response.status === 409) {
+                  return response.json().then(data => {
+                    console.log(data.msg); // 'Existing user'
+                    // Handle the existing user case here
+                    //TODO: this is happening whether or not the user already exists
+                  });
+                } else {
+                  return response.json().then(data => {
+                    console.log(data.id); // The new user ID
+                    // Handle other responses
+                  });
+                }
+              })
             .then((create) => {
                 console.log(create);
                 navigate('/meetings');
