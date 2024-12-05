@@ -14,6 +14,23 @@ export function Meetings() {
   const [not_clicked, clicked] = React.useState('Click the button to confirm if you are attending the meeting');
   const navigate = useNavigate();
 
+  useEffect(() => {
+    const socket = new WebSocket('ws://localhost:9900');
+
+    socket.onmessage = (event) => {
+      console.log('received: ', event.data);
+      // You can update the state or perform other actions based on the received message
+    };
+
+    socket.onopen = () => {
+      socket.send('I am listening');
+    };
+
+    return () => {
+      socket.close();
+    };
+  }, []);
+
   function meetingAttendance() {
     console.log('Button clicked');
     fetch('/api/attending')
