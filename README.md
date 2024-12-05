@@ -64,3 +64,10 @@ I used React to tie my application together.
 - Stores application data in MongoDB: Yes, stores the user information
 - Stores and retrieves credentials in MongoDB: Yes, from login page
 - Restricts application functionality based upon authentication: Yes, can't access meetings page until you log in
+
+### WebSocket Deliverable
+- Backend listens for WebSocket connection:
+- Frontend makes WebSocket connection:
+- Data sent over WebSocket connection:
+- WebSocket data received in the application interface:
+- Application feels fully fuctional:
