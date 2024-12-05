@@ -3,6 +3,13 @@ import '../app.css';
 import { Button } from 'react-bootstrap';
 import { useNavigate } from 'react-router-dom';
 
+/* 
+Put WebSocket in here
+When someone has clicked the button, the WebSocket will update with the user's attendance
+The database will then update the page with the user's attendance
+The user's attendance will be displayed in the div for everyone to see
+*/
+
 export function Meetings() {
   const [not_clicked, clicked] = React.useState('Click the button to confirm if you are attending the meeting');
   const navigate = useNavigate();
