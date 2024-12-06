@@ -2,6 +2,7 @@ import React from 'react';
 import '../app.css';
 import { Button } from 'react-bootstrap';
 import { useNavigate } from 'react-router-dom';
+import { GameEvent, GameNotifier } from './gameNotifier';
 
 export function Meetings() {
   const [not_clicked, clicked] = React.useState('Click the button to confirm if you are attending the meeting');

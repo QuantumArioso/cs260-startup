@@ -5,7 +5,7 @@ const app = express();
 const cors = require('cors');
 const uuid = require('uuid');
 const DB = require('./database.js');
-const { WebSocketServer } = require('ws');
+const { peerProxy } = require('./peerProxy.js');
 
 const authCookieName = 'token';
 
