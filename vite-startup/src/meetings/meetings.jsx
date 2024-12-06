@@ -1,4 +1,4 @@
-import React from 'react';
+import React, { useEffect, useState } from 'react';
 import '../app.css';
 import { Button } from 'react-bootstrap';
 import { useNavigate } from 'react-router-dom';
@@ -12,14 +12,16 @@ The user's attendance will be displayed in the div for everyone to see
 
 export function Meetings() {
   const [not_clicked, clicked] = React.useState('Click the button to confirm if you are attending the meeting');
+  const [wsMessage, setWsMessage] = useState('');
   const navigate = useNavigate();
+  let socket;
 
   useEffect(() => {
-    const socket = new WebSocket('ws://localhost:9900');
+    socket = new WebSocket('ws://localhost:9900');
 
     socket.onmessage = (event) => {
       console.log('received: ', event.data);
-      // You can update the state or perform other actions based on the received message
+      setWsMessage(event.data);
     };
 
     socket.onopen = () => {
@@ -33,13 +35,11 @@ export function Meetings() {
 
   function meetingAttendance() {
     console.log('Button clicked');
-    fetch('/api/attending')
-        .then((response) => response.json())
-        .then((attendance) => {
-            console.log(attendance);
-            console.log(attendance.attending);
-            clicked(attendance.attending);
-        });
+    if (socket.readyState === WebSocket.OPEN) {
+      socket.send('Meeting attendance confirmed');
+    } else {
+      console.log('WebSocket is not open');
+    }
     }
 
     function logout() {
@@ -61,6 +61,7 @@ export function Meetings() {
         <Button onClick={logout}>Logout</Button>
         <Button onClick={meetingAttendance}>Yes!</Button>
         <div> {not_clicked} </div>
+        <div> {wsMessage} </div>
         {/* Websocket will be used on this page to update the link and calendar events in real time from the users with those permissions
         This page will store the calendar events in the database */} 
         <section>
