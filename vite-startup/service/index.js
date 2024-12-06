@@ -5,6 +5,7 @@ const app = express();
 const cors = require('cors');
 const uuid = require('uuid');
 const DB = require('./database.js');
+const { WebSocketServer } = require('ws');
 
 const authCookieName = 'token';
 
@@ -24,9 +25,6 @@ app.set('trust proxy', true);
 // set up router path for the endpoints
 var apiRouter = express.Router();
 app.use(`/api`, apiRouter);
-
-// TODO: replace with my variables
-let user;
 
 // CreateAuth token for a new user
 apiRouter.post('/auth/create', async (req, res) => {
@@ -94,10 +92,8 @@ function setAuthCookie(res, authToken) {
   });
 }
 
-app.listen(port, () => {
+const httpService = app.listen(port, () => {
   console.log(`Listening on port ${port}`);
 });
 
-// what do I need endpoints for?
-// display entered username--take username from login, store in localstorage, retrieve username and display
-// calendar edits (idk if this will be implemented ever)
+peerProxy(httpService);
