@@ -18,7 +18,7 @@ export function Meetings() {
             clicked(attendance.attending);
         });
     // Let other players know a new game has started
-    GameNotifier.broadcastEvent("Attending", GameEvent.Start, {});
+    GameNotifier.broadcastEvent(`${localStorage.getItem('username')}`, GameEvent.Start, {});
     console.log('GameNotifier.broadcastEvent');
     }
 
@@ -39,7 +39,7 @@ export function Meetings() {
     function createMessageArray() {
     const messageArray = [];
     for (const [i, event] of events.entries()) {
-        let message = `: ${localStorage.getItem('username')}!`;
+        let message = ` is attending!`;
 
         messageArray.push(
         <div key={i} className='event'>
