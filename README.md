@@ -70,6 +70,8 @@ I used React to tie my application together.
     - Backend listens in index.js, more WS support in peerProxy.js and gameNotifier.js
 - Frontend makes WebSocket connection: yes
     - Frontend connects in meetings.jsx to broadcast updates
-- Data sent over WebSocket connection:
-- WebSocket data received in the application interface:
-- Application feels fully fuctional:
+- Data sent over WebSocket connection: yes
+    - Data sent in meetings.jsx
+- WebSocket data received in the application interface: yes
+    - Data received and displayed in meetings.jsx
+- Application feels fully fuctional: yes

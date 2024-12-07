@@ -15,23 +15,7 @@ export function Home() {
             <h2>About</h2>
             <div className="about-placeholder">
                 {/* Placeholder for about text */}
-                <p>Visit the resources page to read more about the policy changes. Here you will also find inspiration from the scriptures, church leaders, and other transgender latter-day saints. If you are interested in joining any in-person or online meetings, create an account and login to view the calendar and access the online meeting link.</p>
-            </div>
-        </section>
-        <section>
-            <h2>Lots of filler content</h2>
-            <div className="filler">
-                {/* Testing CSS */}
-                <p>1. filler</p>
-                <p>2. filler</p>
-                <p>3. filler</p>
-                <p>4. filler</p>
-                <p>5. filler</p>
-                <p>6. filler</p>
-                <p>7. filler</p>
-                <p>8. filler</p>
-                <p>9. filler</p>
-                <p>10. filler</p>
+                <p>Visit the resources page to read more about the policy changes. Here you will also find inspiration from the scriptures, church leaders, and other transgender latter-day saints. If you are interested in joining any in-person or online meetings, create an account and login to access the online meeting link.</p>
             </div>
         </section>
     </main>

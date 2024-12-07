@@ -39,7 +39,7 @@ export function Meetings() {
     function createMessageArray() {
     const messageArray = [];
     for (const [i, event] of events.entries()) {
-        let message = `${localStorage.getItem('username')} is attending the meeting!`;
+        let message = `: ${localStorage.getItem('username')}!`;
 
         messageArray.push(
         <div key={i} className='event'>
@@ -75,10 +75,11 @@ export function Meetings() {
             <h2>Meetings</h2>
             <div className="meetings-placeholder">
                 {/* Placeholder for meeting link */}
-                <p>Meeting link will be placed here</p>
+                <p>zoom.link/meeting-link/</p>
+                <p>Meetings held each Thursday at 8pm MST.</p>
             </div>
         </section>
-        <section>
+        {/* <section>
             <h2>June 2024 Calendar</h2>
             <table border="1">
                 <thead>
@@ -149,7 +150,7 @@ export function Meetings() {
                     </tr>
                 </tbody>
             </table>
-        </section>
+        </section> */}
     </main>
   );
 }
