@@ -66,8 +66,10 @@ I used React to tie my application together.
 - Restricts application functionality based upon authentication: Yes, can't access meetings page until you log in
 
 ### WebSocket Deliverable
-- Backend listens for WebSocket connection:
-- Frontend makes WebSocket connection:
+- Backend listens for WebSocket connection: yes
+    - Backend listens in index.js, more WS support in peerProxy.js and gameNotifier.js
+- Frontend makes WebSocket connection: yes
+    - Frontend connects in meetings.jsx to broadcast updates
 - Data sent over WebSocket connection:
 - WebSocket data received in the application interface:
 - Application feels fully fuctional:

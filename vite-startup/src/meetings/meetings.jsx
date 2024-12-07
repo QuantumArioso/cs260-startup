@@ -17,6 +17,38 @@ export function Meetings() {
             console.log(attendance.attending);
             clicked(attendance.attending);
         });
+    // Let other players know a new game has started
+    GameNotifier.broadcastEvent("Attending", GameEvent.Start, {});
+    console.log('GameNotifier.broadcastEvent');
+    }
+
+    const [events, setEvent] = React.useState([]);
+
+    React.useEffect(() => {
+    GameNotifier.addHandler(handleGameEvent);
+
+    return () => {
+        GameNotifier.removeHandler(handleGameEvent);
+    };
+    });
+
+    function handleGameEvent(event) {
+    setEvent([...events, event]);
+    }
+
+    function createMessageArray() {
+    const messageArray = [];
+    for (const [i, event] of events.entries()) {
+        let message = `${localStorage.getItem('username')} is attending the meeting!`;
+
+        messageArray.push(
+        <div key={i} className='event'>
+            <span className={'player-event'}>{event.from.split('@')[0]}</span>
+            {message}
+        </div>
+        );
+    }
+    return messageArray;
     }
 
     function logout() {
@@ -38,8 +70,7 @@ export function Meetings() {
         <Button onClick={logout}>Logout</Button>
         <Button onClick={meetingAttendance}>Yes!</Button>
         <div> {not_clicked} </div>
-        {/* Websocket will be used on this page to update the link and calendar events in real time from the users with those permissions
-        This page will store the calendar events in the database */} 
+        <div>{createMessageArray()}</div>
         <section>
             <h2>Meetings</h2>
             <div className="meetings-placeholder">

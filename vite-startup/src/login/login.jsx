@@ -7,31 +7,14 @@ import { useState } from 'react';
 export function Login() {
     const navigate = useNavigate();
 
-    // const handleSubmit = (event) => {
-    //     event.preventDefault(); // Prevent the default form submission
-    //     // Perform any login logic here (e.g., authentication)
-    //     navigate('/meetings'); // Navigate to the meetings route
-    // };
-
-    // const [username, setUsername] = useState('');
-    // const [password, setPassword] = useState('');
-    // useEffect(() => {
-    //     const usernameElement = document.getElementById('username');
-    //     const passwordElement = document.getElementById('password');
-
-    //     if (usernameElement && passwordElement) {
-    //     setUsername(usernameElement.value);
-    //     setPassword(passwordElement.value);
-    //     console.log(usernameElement.value);
-    //     }
-    //     console.log(username);
-    // }, []);
     const login = () => {
       const username = document.getElementById('username').value;
       const password = document.getElementById('password').value;
       console.log("In login function");
       console.log(username, password);
-      console.log("after username and password should be output")
+      console.log("after username and password should be output");
+      localStorage.setItem('username', username);
+      console.log(localStorage.getItem('username'));
         
 
         try {
@@ -61,25 +44,14 @@ export function Login() {
         }
     }
 
-    // const [newUsername, setNewUsername] = useState('');
-    // const [newPassword, setNewPassword] = useState('');
-    // useEffect(() => {
-    //     const newUsernameElement = document.getElementById('username');
-    //     const newPasswordElement = document.getElementById('password');
-
-    //     if (newUsernameElement && newPasswordElement) {
-    //     setNewUsername(newUsernameElement.value);
-    //     setNewPassword(newPasswordElement.value);
-    //     console.log(newUsernameElement.value);
-    //     }
-    //     console.log(newUsername);
-    // }, []);
     const createUser = () => {
         const newUsernameElement = document.getElementById('username').value;
         const newPasswordElement = document.getElementById('password').value;
         console.log("In create user function");
         console.log(newUsernameElement, newPasswordElement);
-        console.log("after newUsername and newPassword should be output")
+        console.log("after newUsername and newPassword should be output");
+        localStorage.setItem('username', newUsernameElement);
+        console.log(localStorage.getItem('username'));
 
         try {
             fetch('/api/auth/create', {method: 'post', body: JSON.stringify({ email: newUsernameElement, password: newPasswordElement }), headers: {
