@@ -1004,3 +1004,122 @@ try {
 } finally {
   console.log(`Toss completed`);
 }
+
+## Final Review Questions
+1) What is the default port for HTTP/HTTPS/SSH? 
+- HTTP: 80
+- HTTPS: 443
+- SSH: 22
+2) What does an HTTP status code in the range of 300/400/500 indicate?
+- 300: Redirection
+- 400: Client error
+- 500: Server error
+3) What does the HTTP header content-type allow you to do?
+- It allows you to specify the type of data being sent in the request or response
+4) What does a “Secure cookie”/”Http-only cookie”/”Same-site cookie” do?
+- Secure cookie: Ensures that the cookie is only sent over HTTPS
+- Http-only cookie: Prevents JavaScript from accessing the cookie
+- Same-site cookie: Prevents the cookie from being sent in cross-site requests
+5) Assuming the following Express middleware, what would be the console.log output for an HTTP GET request with a URL path of /api/document?
+- Express middleware is a function that has access to the request and response objects and can modify them
+- HTTP GET requests work by sending a request to the server to retrieve data. The request can include parameters in the URL path, query string, or request body. They look like: GET /api/document
+6) Given the following Express service code: What does the following front end JavaScript that performs a fetch return?
+- Express is a web application framework for Node.js that allows you to build web applications and APIs
+- Fetch is a web API that allows you to make HTTP requests in JavaScript
+- The fetch function returns a Promise that resolves to the Response to that request, whether it is successful or not. It looks like this: fetch('https://api.com/data')
+- The Response object represents the response to a request
+7) Given the following MongoDB query, select all of the matching documents {name:Mark}
+- MongoDB is a NoSQL database that allows you to store and query data in a flexible, schema-less format
+- MongoDB queries are written in JSON-like syntax and use the find method to retrieve documents from a collection. They look like this: db.collection.find({field:value})
+- db.users.find({name: "Mark"})
+8) How should user passwords be stored?
+- User passwords should be hashed and salted
+- (salted means adding random data to the password before hashing)
+9) Assuming the following node.js websocket code in the back end, and the following front end websocket code, what will the front end log to the console?
+- WebSockets are a communication protocol that provides full-duplex communication channels over a single TCP connection
+- WebSockets allow you to send messages between the client and server in real-time
+- The WebSocket API allows you to create WebSocket connections in the browser
+- The WebSocket object provides the API for creating and managing a WebSocket connection
+- The onmessage event handler is called when a message is received from the server
+- The send method is used to send a message to the server
+- The close method is used to close the WebSocket connection
+- The readyState property indicates the state of the WebSocket connection
+- front end websocket code looks like: 
+```javascript
+const ws = new WebSocket('ws://localhost:8080');
+ws.onmessage = (event) => {
+  console.log(event.data);
+};
+```
+- back end websocket code looks like: 
+```javascript
+const WebSocket = require('ws');
+const wss = new WebSocket.Server({ port: 8080 });
+wss.on('connection', (ws) => {
+  ws.send('Hello, client!');
+});
+```
+- The front end will log "Hello, client!" to the console
+10) What is the websocket protocol intended to provide?
+- A full-duplex communication channel over a single TCP connection
+11) What do the following acronyms stand for? JSX, JS, AWS, NPM, NVM
+- JSX: JavaScript XML
+- JS: JavaScript
+- AWS: Amazon Web Services
+- NPM: Node Package Manager
+- NVM: Node Version Manager
+12) Assuming an HTML document with a body element. What text content will the following React component generate?  The react component will use parameters.
+- React is a JavaScript library for building user interfaces
+- React components are reusable pieces of code that represent parts of a user interface
+- React components can take input data and return elements that describe what should appear on the screen
+- React components can be written as functions or classes
+- React components can be nested within other components
+- React components can be rendered to the DOM using ReactDOM
+- React components can have state and lifecycle methods
+- React components look like: function MyComponent(props) { return <div>{props.text}</div; }
+- React components can be used in JSX like: <MyComponent text="Hello, world!" />
+13) Given a set of React components that include each other, what will be generated
+- React components that include each other look like: 
+```javascript
+function Parent() {
+  return (
+    <div>
+      <Child />
+    </div>
+  );
+}
+function Child() {
+  return <div>Child component</div>;
+}
+```
+14) What does a React component with React.useState do?
+- It allows the component to have state
+- In React, useState is a Hook that allows you to add state to functional components.
+- Declares a state variable: It creates a variable that can hold and manage data within your component.
+  - Returns a pair of values:
+    - The first value is the current state.
+    - The second value is a function to update the state.
+  - Triggers re-renders: When you call the update function, it triggers React to re-render the component, reflecting the new state.
+15) What are React Hooks used for?
+- React Hooks are used to add state and other React features to functional components
+16) What does the State Hook/Context Hook/Ref Hook/Effect Hook/Performance Hook do?
+- State Hook: Allows you to add state to functional components
+- Context Hook: Allows you to share state between components without passing props
+- Ref Hook: Allows you to access the DOM or React elements
+- Effect Hook: Allows you to perform side effects in functional components
+- Performance Hook: Allows you to optimize performance in functional components
+17) Given React Router code, select statements that are true.
+- React Router is a library that allows you to add routing to your React applications
+- React Router uses a declarative approach to routing
+- React Router allows you to define routes using Route components
+- React Router allows you to navigate between routes using Link components
+18) What does the package.json file do?
+- The package.json file is used to manage dependencies and scripts for a Node.js project
+19) What does the fetch function do?
+- The fetch function is used to make HTTP requests in JavaScript
+20) What does node.js do?
+- Node.js is a JavaScript runtime that allows you to run JavaScript on the server
+21) What does pm2 do?
+- pm2 is a process manager for Node.js applications
+22) What does Vite do?
+- Vite is a build tool for modern web development
